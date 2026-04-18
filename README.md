@@ -1,4 +1,4 @@
-# Buku Tamu Digital - Workshop Fundamental GitHub
+# Buku Tamu Digital - CONFLICT
 
 Repositori ini didedikasikan sebagai ruang praktik langsung (hands-on) kolaborasi kode dalam acara **Workshop Fundamental GitHub** bersama HMPS MI Polmed. Tujuan utama repositori ini adalah mempraktikkan alur kerja Open Source menggunakan metode Fork dan Pull Request.
 
