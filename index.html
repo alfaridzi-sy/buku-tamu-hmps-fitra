@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu Digital | Workshop GitHub</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --bg-body: #f9fafb;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.5;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Card layout for form and list 
+        */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            filter: brightness(1.1);
+        }
+
+        /* Guestbook Entries List 
+        */
+        .entry {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .entry:last-child {
+            border-bottom: none;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .entry-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .entry-date {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Buku Tamu Digital</h1>
+            <p>Tinggalkan pesan Anda untuk proyek kolaborasi ini.</p>
+        </div>
+
+        <div class="card">
+            <form id="guestbookForm">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" rows="3" placeholder="Tuliskan pesan atau testimoni Anda" required></textarea>
+                </div>
+                <button type="submit" class="btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    Kirim Pesan
+                </button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h3>Pesan Terakhir</h3>
+            <div id="entriesContainer">
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-author">Syafitra Alfa Ridzi</span>
+                        <span class="entry-date">18 April 2026</span>
+                    </div>
+                    <p class="entry-content">Selamat belajar kolaborasi profesional di GitHub! Jaga kualitas kode Anda.</p>
+                </div>
+                
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-author">Sistem Demo</span>
+                        <span class="entry-date">18 April 2026</span>
+                    </div>
+                    <p class="entry-content">Gunakan file HTML ini sebagai contoh struktur kode yang bersih dan terorganisir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Logic to handle guestbook submission
+         * Professional Note: In a real app, this would be sent to a backend API.
+         */
+        document.getElementById('guestbookForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('name');
+            const messageInput = document.getElementById('message');
+            
+            alert('Pesan dari ' + nameInput.value + ' berhasil direkam secara lokal!');
+            
+            // Clear inputs after submission
+            nameInput.value = '';
+            messageInput.value = '';
+        });
+    </script>
+</body>
+</html>
